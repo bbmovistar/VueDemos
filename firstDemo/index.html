@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+	<title>h5Order</title>
+</head>
+<body>
+	<div class="cantainer">
+		<h3>成人票</h3>
+		<div class="weekWrap">
+			<ul class="week">
+				<li class="day" v-for="item in days" @click="getTicketData">{{item}}</li>
+			</ul>
+		</div>
+		
+		<ticket :tickets="tickets"></ticket>
 
+		<pricebox :select="select" v-show="checked"></pricebox>
+
+	</div>
+	<script src="src/jquery.min.js"></script>
+	<script src="dist/main.js"></script>
+</body>
+</html>
