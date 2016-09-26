@@ -15,26 +15,26 @@
 </template>
 
 <script>
-import { updateSelect } from '../vuex/actions'
+// import { updateSelect } from '../vuex/actions'
 
 	module.exports = {
-		// props: ['tickets'],
+		props: ['tickets'],
 		data: function(){
 			return {
 				ticketDetail: {},
 				checked: true
 			}
 		},
-		vuex: {
-			getters: {
-				tickets: function(state){
-					return state.tickets;
-				}
-			}，
-			actions: {
-				updateSelect: updateSelect
-			}
-		},
+		// vuex: {
+		// 	getters: {
+		// 		tickets: function(state){
+		// 			return state.tickets;
+		// 		}
+		// 	}，
+		// 	actions: {
+		// 		updateSelect: updateSelect
+		// 	}
+		// },
 		ready: function(){
 			//选中第一个
 			$('.ticket:first-child .ticketCheck').trigger('click');
@@ -50,8 +50,8 @@ import { updateSelect } from '../vuex/actions'
 					this.ticketDetail = {};	
 					this.checked = false;	
 				}
-				// this.dispatchMsg();
-				this.updateSelect(this.ticketDetail, this.checked);
+				this.dispatchMsg();
+				// this.updateSelect(this.ticketDetail, this.checked);
 			},
 			resetTicketDetail: function(e){
 				this.ticketDetail = {};

@@ -17,36 +17,36 @@
 
 <script>
 	module.exports = {
-		// props: ['select'],
+		props: ['select'],
 		data: function(){
 			return {
 				num: 1,
 				total: 0,
 			}
 		},
-		vuex: {
-			getters: {
-				select: function(state){
-					return state.select;
-				},
-				checked: function(state){
-					return state.checked;
-				}
-			}
-		},
+		// vuex: {
+		// 	getters: {
+		// 		select: function(state){
+		// 			return state.select;
+		// 		},
+		// 		checked: function(state){
+		// 			return state.checked;
+		// 		}
+		// 	}
+		// },
 		watch: {
 			'select': function(newVal, oldVal){
 				this.total = this.select.price;
 				this.num = 1;
 			}
 		},
-		// events: {
-		// 	'select-msg': function(msg){
-		// 		this.select = msg;
-		// 		this.total = this.select.price;
-		// 		this.num = 1;
-		// 	}
-		// },
+		events: {
+			'select-msg': function(msg){
+				this.select = msg;
+				this.total = this.select.price;
+				this.num = 1;
+			}
+		},
 		methods: {
 			addNum: function(){
 				if (this.num < this.select.remain) {
