@@ -42,15 +42,15 @@ var vm = new Vue({
 			this.$broadcast('ticket-msg',this.tickets);
 		}
 	},
-	// events: {
-	// 	'selected': function(msg){
-	// 		this.select = msg;
-	// 		this.$nextTick(function(){
-	// 			this.$broadcast('select-msg',this.select);
-	// 		})	
-	// 	},
-	// 	'checked': function(msg){
-	// 		this.checked = msg;
-	// 	}
-	// }
+	 events: {
+	 	'selected': function(msg){
+	 		this.select = msg;
+	 		this.$nextTick(function(){
+	 			this.$broadcast('select-msg',this.select);
+	 		})	
+	 	},
+	 	'checked': function(msg){
+	 		this.checked = msg;
+	 	}
+	 }
 })
